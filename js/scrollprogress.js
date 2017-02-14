@@ -19,6 +19,8 @@
   Scroller.prototype = {
     init: function() {
       build.call(this);
+      updateProgress.call(this);
+      initEvents.call(this);
     }
   };
 
@@ -28,6 +30,17 @@
     this.progress = document.createElement('div');
     this.progress.classList.add('sp-progress');
     this.container.insertBefore(this.progress, this.container.firstChild);
+  }
+
+  function updateProgress() {
+    var width = Math.round((this.container.scrollTop / (this.container.scrollHeight - window.innerHeight)) * 100);
+
+    this.progress.style.width = width + '%';
+  }
+
+  function initEvents() {
+    var self = this;
+    window.addEventListener('scroll', updateProgress.bind(this));
   }
 
   window.scrollprogress = function(selector) {
