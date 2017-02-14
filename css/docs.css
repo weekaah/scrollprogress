@@ -1,4 +1,14 @@
+body {
+  color: #555;
+  font-family: 'Poppins', sans-serif;
+  line-height: 1.6;
+}
+
 .wrapper {
   max-width: 600px;
   margin: 0 auto;
+}
+
+p {
+  margin-bottom: 2rem;
 }
