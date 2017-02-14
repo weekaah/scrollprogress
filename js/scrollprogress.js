@@ -23,9 +23,11 @@
   };
 
   function build() {
+    this.container.classList.add('sp-container');
+
     this.progress = document.createElement('div');
     this.progress.classList.add('sp-progress');
-    this.container.appendChild(this.progress);
+    this.container.insertBefore(this.progress, this.container.firstChild);
   }
 
   window.scrollprogress = function(selector) {
