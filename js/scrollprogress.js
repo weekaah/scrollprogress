@@ -56,13 +56,12 @@
   }
 
   function updateProgress() {
-    var width = Math.round((this.container.scrollTop / (this.container.scrollHeight - window.innerHeight)) * 100);
+    var width = Math.round((window.pageYOffset / (this.container.scrollHeight - window.innerHeight)) * 100);
 
     this.progress.style.width = width + '%';
   }
 
   function initEvents() {
-    var self = this;
     window.addEventListener('scroll', updateProgress.bind(this));
   }
 
